@@ -8,16 +8,17 @@ let data;
 let para;
 let output='';
 document.querySelector("#submit").addEventListener("click", () => {
-  data = CKEDITOR.instances.content.getData();
+        count++;
+        data = CKEDITOR.instances.content.getData();
   if(data.length==0){
         alert('Không thể tạo file do chưa có dữ liệu');
   }
   else{
-  localStorage.setItem(storageKey, data);
-  editor.setData('');
+  localStorage.setItem(`storageKey${count}`, data);
+//   editor.setData('');
 //   dang can nhac doan nay khong biet co nen remove item hay khong
-  localStorage.removeItem(storageKey);
-  count++;
+//   localStorage.removeItem(storageKey);
+  
   showList(count);
  
   }
@@ -27,12 +28,13 @@ document.querySelector("#submit").addEventListener("click", () => {
 
 function showList(numFile){
        
-        output+=`<div class="file" style="display: flex" onclick="completed()">File ${numFile}</div>`
+        output+=`<div class="file" style="display: flex" onclick="completed(${numFile})">File ${numFile}</div>`
         document.querySelector('.storageFile').innerHTML= output;
         
 }
 
-function completed(){
-        editor.setData(data)
+function completed(num){
+        
+       editor.setData(localStorage.getItem(`storageKey${num}`))
 }
 
