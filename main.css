@@ -6,7 +6,7 @@
 }
 body{
     background-color: #f1faee;
-    margin: 0 50px;
+    margin: 0 50px 40px 50px;
 }
 #doc{
     width: 100px;
@@ -23,14 +23,20 @@ body{
     width: 300px;
     
 }
-.storage{
-    background-color: aquamarine;
-    min-height: 500px;
-    margin-top: 40px;
+.storageFile{
+    background-color: #457b9d;
+    min-height: 50px;
+    width: 200px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #submit{
     font-size: 15px;
-    width: 80px;
+    width: 100px;
     height: 40px;
     color: #fff;
     margin-top:10px;
