@@ -6,6 +6,7 @@ var editor = CKEDITOR.instances.content;
 editor.setData(savedData);
 let data;
 let para;
+let output='';
 document.querySelector("#submit").addEventListener("click", () => {
   data = CKEDITOR.instances.content.getData();
   if(data.length==0){
@@ -23,23 +24,15 @@ document.querySelector("#submit").addEventListener("click", () => {
 });
 
 
-let childElement2 =  document.querySelectorAll('div')[1];
-childElement2.addEventListener('click', ()=>{
-        console.log(childElement2);
-}
-)
+
 function showList(numFile){
-        para = document.createElement("div");
-        para.innerText=data;
-        para.style.marginBottom='10px';
-        para.style.height='50px';
-        para.style.width='10vw';
-        para.style.display='flex';
-        para.style.alignItems='center';
-        para.style.justifyContent='center';
-        para.style.backgroundColor='#457b9d'
-        document.querySelector('body').appendChild(para);
-
+       
+        output+=`<div class="file" style="display: flex" onclick="completed()">File ${numFile}</div>`
+        document.querySelector('.storageFile').innerHTML= output;
+        
 }
 
+function completed(){
+        editor.setData(data)
+}
 

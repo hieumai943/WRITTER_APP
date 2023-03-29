@@ -24,10 +24,8 @@ body{
     
 }
 .storageFile{
-   
-    cursor: pointer;
-    color: #fff;
-    
+    background-color: aqua;
+    height: 500px;
 }
 #submit{
     font-size: 15px;
@@ -36,4 +34,16 @@ body{
     color: #fff;
     margin-top:10px;
     background-color: #457b9d;
+}
+.file{
+    
+    margin-top: 10px;
+    background-color: #457b9d;
+    width: 200px;
+    height: 30px;
+   cursor: pointer;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
