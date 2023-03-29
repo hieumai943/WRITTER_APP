@@ -24,15 +24,10 @@ body{
     
 }
 .storageFile{
-    background-color: #457b9d;
-    min-height: 50px;
-    width: 200px;
-    margin-top: 20px;
+   
     cursor: pointer;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
 #submit{
     font-size: 15px;
@@ -42,7 +37,3 @@ body{
     margin-top:10px;
     background-color: #457b9d;
 }
-
-/* #cke_1_contents{
-    display: none;
-} */
