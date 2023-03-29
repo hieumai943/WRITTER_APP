@@ -6,7 +6,7 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	config.toolbarGroups = [
-		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'taiLieu', groups: [ 'mode', 'taiLieu', 'doctools' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
 		{ name: 'insert', groups: [ 'insert','CodeSnippet' ] },
 		{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
@@ -27,5 +27,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeButtons = 'Preview,Paste,PasteText,PasteFromWord,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,CreateDiv,Blockquote,Language,BidiLtr,BidiRtl,Unlink,Anchor,SpecialChar,PageBreak,Iframe,ShowBlocks,About';
 	config.height =400;
 	config.uiColor = '457b9d' ;
-
+	
 };
