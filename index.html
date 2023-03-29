@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>WRITTER APP</title>
 </head>
 <body>
@@ -21,9 +22,11 @@
         CKEDITOR.replace("content");
        
     </SCript>
-    <button id="submit">SAVE FILE</button>
-    <div class="storageFile">
-      
+    <button id="submit">SAVE FILE <i class="fa fa-floppy-o" aria-hidden="true" style="margin-left:10px"></i></button>
+    <div class ="saving" style="background-color: #457b9d; ">
+     <div class="title"> FILES SAVING</div>
+    <div class="storageFile"></div>
+</div>
     </div>
     <script src="main.js"></script>
 </body>
