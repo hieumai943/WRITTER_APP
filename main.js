@@ -1,6 +1,7 @@
 let storageKey = "text";
 var savedData = localStorage.getItem(storageKey);
 let count = 0;
+
 // Set the saved data to the editor instance
 var editor = CKEDITOR.instances.content;
 editor.setData(savedData);
@@ -27,9 +28,11 @@ showList(localStorage.getItem("numFile"));
 function showList(numFile) {
   let output = "";
   for (let i = 1; i <= numFile; i++) {
+    if(localStorage.getItem(`storageKey${i}`)!= null){
     output += `<span class="file"  onclick="completed(${i})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:10px"></i>File ${i}<i class="fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${i})"></i></span>`;
     document.querySelector(".storageFile").innerHTML = output;
   }
+}
 }
 
 function completed(num) {
@@ -38,13 +41,14 @@ function completed(num) {
 
 function deleteFile(num){
   localStorage.removeItem(`storageKey${num}`);
-  count--;  
-  localStorage.setItem("numFile", count);
+
+  localStorage.setItem("numFile", localStorage.getItem('numFile')-1);
   let output = "";
   document.querySelector(".storageFile").innerHTML = output;
   for (let i = 1; i <= count; i++) {
-    if(i==num) continue;
+    if(localStorage.getItem(`storageKey${i}`)!= null){
     output += `<span class="file"  onclick="completed(${i})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:10px"></i>File ${i}<i class="fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${i})"></i></span>`;
     document.querySelector(".storageFile").innerHTML = output;
   }
+}
 }
