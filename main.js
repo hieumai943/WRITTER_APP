@@ -1,4 +1,5 @@
 
+let storageKey = "text";
 var savedData = localStorage.getItem(storageKey);
 let count = 0;
 // Set the saved data to the editor instance
