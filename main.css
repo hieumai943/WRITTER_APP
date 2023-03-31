@@ -57,13 +57,11 @@ body{
     transform: translateY(3px);
 }
 .file{
-    
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 35px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+   width: 100%;
     background-color: #354f52;
-    width: 200px;
+   
     height: 40px;
    cursor: pointer;
    color: #fff;
