@@ -137,3 +137,6 @@ body{
     cursor: pointer;
    transform: translate(100px,100px);
   }
+  .file .trash:hover{
+    color:rgba(0, 0, 0, 0.5);
+  }

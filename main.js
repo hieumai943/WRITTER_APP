@@ -72,7 +72,7 @@ function showList() {
   let output = "";
   
   tasklist.forEach((data,index)=>{
-    output += `<span class="file"  onclick="completed(${index})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:15px"></i>${fileList[index]}<i class="fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${index})"></i></span>`;
+    output += `<span class="file"  onclick="completed(${index})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:15px"></i>${fileList[index]}<i class="trash fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${index})"></i></span>`;
   })
   document.querySelector(".storageFile").innerHTML = output;
 }
