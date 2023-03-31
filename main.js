@@ -35,6 +35,7 @@ document.querySelector(".open").addEventListener("click", () => {
 });
 let popup = document.getElementById("myPopup");
 let setUp = document.getElementById("setFile");
+let backUp = document.getElementById('backButton');
 let fileUp= document.getElementById("saving");
 
 setUp.addEventListener('click',()=>{
@@ -52,14 +53,17 @@ setUp.addEventListener('click',()=>{
   popup.style.display = "none";
   showList();
 })
-
+backUp.addEventListener('click', ()=>{
+  fileUp.style.display = "none";
+})
 
 
 function showList() {
 
   let localItems = JSON.parse(localStorage.getItem('storageKey'));
   let fileItems = JSON.parse(localStorage.getItem('storageFile'));
-  if(localItems=== null ) {tasklist=[];
+  if(localItems=== null ) {
+    tasklist=[];
   fileList=[];
 }
   else{ tasklist= localItems;
@@ -68,7 +72,7 @@ function showList() {
   let output = "";
   
   tasklist.forEach((data,index)=>{
-    output += `<span class="file"  onclick="completed(${index})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:10px"></i>${fileList[index]}<i class="fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${index})"></i></span>`;
+    output += `<span class="file"  onclick="completed(${index})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:15px"></i>${fileList[index]}<i class="fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${index})"></i></span>`;
   })
   document.querySelector(".storageFile").innerHTML = output;
 }
