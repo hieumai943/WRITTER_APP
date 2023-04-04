@@ -4,10 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
-    background-color: #f1faee;
-    margin: 0 250px 40px 250px;
-}
+
 #doc{
     width: 100px;
 }
@@ -33,16 +30,18 @@ body{
 }
 .submit{
     font-size: 15px;
-    width: 130px;
-    height: 40px;
+    width: 70px;
+    height: 30px;
     color: #fff;
     margin-bottom: 10px;
-    background-color: #457b9d;
-    border-radius: 10px;
+    background-color: #0096c7;
+    border-radius: 5px;
+    display: absolute;
+    right: 10px;
 }
 .submit:hover{
 
-    transform: translateY(3px);
+    color: black;
 }
 .open{
     font-size: 15px;
@@ -137,4 +136,36 @@ body{
   }
   .file .trash:hover{
     color:rgba(0, 0, 0, 0.5);
+  }
+  #cke_1_bottom{
+    display:none;
+  }
+  #inside{
+    margin: 50px 350px 100px 350px;
+
+    
+  }
+  body{
+    background-color: #84a98c;
+    
+  }
+  #cke_content{
+    
+     box-shadow:5px 10px 12px #14213d;
+     background-color: #e5e5e5;
+  }
+  #cke_1_top{
+   
+
+    background-color: #fff;
+  }
+  #addition{
+    background-color: #fff;
+    height:50px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    box-shadow: 5px 10px 12px #14213d;
+   
+    
   }
