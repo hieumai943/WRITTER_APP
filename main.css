@@ -33,11 +33,12 @@
     width: 70px;
     height: 30px;
     color: #fff;
-    margin-bottom: 10px;
+   
     background-color: #0096c7;
     border-radius: 5px;
-    display: absolute;
-    right: 10px;
+    position: absolute;
+    top:20%;
+    right: 5%;
 }
 .submit:hover{
 
@@ -45,15 +46,17 @@
 }
 .open{
     font-size: 15px;
-    width: 130px;
-    height: 40px;
+    width: 70px;
+    height: 30px;
     color: #fff;
-    margin-bottom: 10px;
-    background-color: #457b9d;
-    border-radius: 10px;
+    background-color: #0096c7;
+    border-radius: 5px;
+    position: absolute;
+    top:20%;
+    left: 2%;
 }
 .open:hover{
-    transform: translateY(3px);
+   color: #000;
 }
 .file{
     margin-top: 5%;
@@ -110,7 +113,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-   display: none;
+   
   }
   #setFile {
     margin-top: 10px;
@@ -160,12 +163,13 @@
     background-color: #fff;
   }
   #addition{
+    position :relative;
     background-color: #fff;
     height:50px;
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    box-shadow: 5px 10px 12px #14213d;
+   
    
     
   }
