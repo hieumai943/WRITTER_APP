@@ -10,9 +10,9 @@ let data;
 let para;
 let tasklist=[];
 let fileList =[];
-
+let number = localStorage.getItem('currentFile');
 document.querySelector(".submit").addEventListener("click", () => {
-
+  
 
   data = CKEDITOR.instances.content.getData();
   if (data.length == 0) {
@@ -36,7 +36,7 @@ document.querySelector(".open").addEventListener("click", () => {
 });
 let popup = document.getElementById("myPopup");
 let setUp = document.getElementById("setFile");
-let backUp = document.getElementById('backButton');
+
 let fileUp= document.getElementById("saving");
 
 setUp.addEventListener('click',()=>{
@@ -54,9 +54,6 @@ setUp.addEventListener('click',()=>{
   popup.style.display = "none";
   showList();
 })
-backUp.addEventListener('click', ()=>{
-  fileUp.style.display = "none";
-})
 
 
 function showList() {
@@ -70,23 +67,19 @@ function showList() {
   else{ tasklist= localItems;
     fileList=fileItems;
   }
-  let output = "";
-  
-  tasklist.forEach((data,index)=>{
-    output += `<span class="file"  onclick="completed(${index})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:15px"></i>${fileList[index]}<i class="trash fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${index})"></i></span>`;
-  })
-  document.querySelector(".storageFile").innerHTML = output;
+  editor.setData(tasklist[number]);
 }
 showList();
-function completed(num) {
-  editor.setData(tasklist[num]);
-}
+// showList();
+// function completed(num) {
+//   editor.setData(tasklist[num]);
+// }
 
-function deleteFile(num){
-tasklist.splice(num,1);
-fileList.splice(num,1);
-localStorage.setItem('storageKey', JSON.stringify(tasklist));
-localStorage.setItem('storageFile', JSON.stringify(fileList));
-showList();
-editor.setData('');
-}
+// function deleteFile(num){
+// tasklist.splice(num,1);
+// fileList.splice(num,1);
+// localStorage.setItem('storageKey', JSON.stringify(tasklist));
+// localStorage.setItem('storageFile', JSON.stringify(fileList));
+// showList();
+// editor.setData('');
+// }
