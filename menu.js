@@ -15,7 +15,7 @@ function showList() {
 
     tasklist.forEach((data, index) => {
         output += `<div class="file">
-        <a href="index.html"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
+        <a href="index.html"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:60px;"></i></a>
         <span>${fileList[index]}</span>
         </div>`;
     })

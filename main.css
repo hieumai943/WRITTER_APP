@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 #doc{
     width: 100px;
@@ -27,18 +28,21 @@
 }
 .storageFile{
     color: #fff;
-    min-height: 0px;
+    min-height: 100px;
+    margin-top: 20px;
+    padding-bottom: 40px;
     font-size: 25px;
     display: grid;
   grid-template-columns:  40% 40% 40%;
-  grid-template-rows: 100px;
+ grid-template-rows: 100px 100px;
+ border: 1px solid #ccc;
 }
 .submit{
     font-size: 15px;
     width: 70px;
     height: 30px;
     color: #fff;
-   
+   cursor: pointer;
     background-color: #0096c7;
     border-radius: 5px;
     position: absolute;
@@ -63,18 +67,23 @@
    color: #000;
 }
 .file{
-
+    display: block;
    text-decoration: none;
     height: 40px;
    cursor: pointer;
    color: #000;
-    width: 54px;
+    width: 80px;
     margin-bottom: 20px;
     margin-top: 30px;
     margin-left: 10px;
 }
+.file span{
+    font-size: 20px;
+    width: 30px;
+}
 .file i{
     color: green;
+    font-size: 40px;
 }
 .file :hover{
     color: blue;
@@ -110,7 +119,7 @@
     background-color: #edf2f4;
     color: #000;
     width: 30vw;
-    padding: 20px 20px 100px 20px;
+    padding: 20px 20px 70px 20px;
     border: 1px solid #ccc;
     border-radius: 7px;
     margin-top: 20px;
