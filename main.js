@@ -11,6 +11,7 @@ let para;
 let tasklist=[];
 let fileList =[];
 let number = localStorage.getItem('currentFile');
+
 document.querySelector(".submit").addEventListener("click", () => {
   
 
@@ -18,8 +19,9 @@ document.querySelector(".submit").addEventListener("click", () => {
   if (data.length == 0) {
     alert("Không thể tạo file do chưa có dữ liệu");
   } else {
-    popup.style.display='block';
-
+    
+   fadeUp.style.display='block';
+   popup.style.display='block';
     tasklist.push(data);
     localStorage.setItem('storageKey',JSON.stringify(tasklist) );
     editor.setData("");
@@ -36,7 +38,7 @@ document.querySelector(".open").addEventListener("click", () => {
 });
 let popup = document.getElementById("myPopup");
 let setUp = document.getElementById("setFile");
-
+let fadeUp= document.getElementById('fade')
 let fileUp= document.getElementById("saving");
 
 setUp.addEventListener('click',()=>{
@@ -51,6 +53,7 @@ setUp.addEventListener('click',()=>{
 
   // fileList.push(inputVal.value);
   localStorage.setItem('storageFile',JSON.stringify(fileList) );
+  fadeUp.style.display='none';
   popup.style.display = "none";
   showList();
 })
@@ -69,7 +72,10 @@ function showList() {
   }
   editor.setData(tasklist[number]);
 }
+
 showList();
+if(number ==99 )document.querySelector('.fileName').innerHTML=`<h2>New File<\h2>`;
+else document.querySelector('.fileName').innerHTML=`<h2 '>${fileList[number]}</h2>`
 // showList();
 // function completed(num) {
 //   editor.setData(tasklist[num]);

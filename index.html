@@ -16,7 +16,8 @@
     </div> -->
    
     <div id="addition">
-        <a class="open" href="menu.html" >OPEN</a>
+        <a class="open" href="menu.html" ><i class="fa fa-arrow-left" aria-hidden="true" style="font-size: 30px;"></i></a>
+        <div class="fileName"><h2>New File</h2></div>
         <button class="submit">SAVE</button>
     </div>
     <textarea  class="text" name="content" id="" cols="30" rows="10">
@@ -27,10 +28,10 @@
         CKEDITOR.replace("content");
        
     </SCript>
-    
+    <div id="fade"></div>
     <div id="myPopup">
         <h2>Set name for file</h2>
-        <input class="inputVal" type="text" placeholder="Type your file name ..."> 
+        <input class="inputVal" type="text" placeholder="Type your file name ..." style="padding-left: 10px"> 
         <button id="setFile">Set</button>
       </div>
     
