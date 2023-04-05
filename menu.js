@@ -14,7 +14,10 @@ function showList() {
     let output = "";
 
     tasklist.forEach((data, index) => {
-        output += `<a href='index.html' class="file"  onclick="completed(${index})"><i class="fa fa-file-o" aria-hidden="true" style="margin-right:15px"></i>${fileList[index]}<i class="trash fa fa-trash-o" aria-hidden="true" style='margin-left:30px' onclick="deleteFile(${index})"></i></a>`;
+        output += `<div class="file">
+        <a href="index.html"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
+        <span>${fileList[index]}</span>
+        </div>`;
     })
     document.querySelector(".storageFile").innerHTML = output;
 }
@@ -31,3 +34,6 @@ function deleteFile(num) {
     showList();
     editor.setData('');
 }
+document.getElementById('addFile').addEventListener('click',()=>{
+    localStorage.setItem('currentFile', 99);
+})
