@@ -17,7 +17,7 @@ function showList() {
         output += `<div class="file">
         <a href="index.html"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
         <span>${fileList[index]}</span>
-        <i class="fa fa-trash-o" aria-hidden="true" onclick="deleteFile(${index})" style="font-size:30px;"></i>
+        <i id="xoa"class="fa fa-trash-o" aria-hidden="true" onclick="deleteFile(${index})" style="font-size:30px;"></i>
         </div>`;
     })
     document.querySelector(".storageFile").innerHTML = output;

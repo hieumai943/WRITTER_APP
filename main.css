@@ -79,9 +79,19 @@
     margin-top: 30px;
     margin-left: 10px;
 }
-.file > i{
+.file #xoa{
   position: absolute;
   right: 10%;
+}
+ #down{
+  position: absolute;
+  top:20%;
+  right: 20%;
+  color: #0096c7;
+  cursor: pointer;
+}
+#down:hover{
+  color: black;
 }
 .file span{
     font-size: 20px;

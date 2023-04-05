@@ -36,6 +36,38 @@ document.querySelector(".open").addEventListener("click", () => {
   
 
 });
+document.getElementById('down').addEventListener('click', ()=>{
+  downloadPlainText();
+})
+function downloadPlainText() {
+  // Get the CKEditor instance and the text content
+  let content= CKEDITOR.instances.content.getData();
+
+  // Remove any HTML tags from the content
+  var div = document.createElement("div");
+  div.innerHTML = content;
+  var textContent = div.textContent || div.innerText || "";
+
+  // Create a Blob object containing the plain text content
+  var blob = new Blob([textContent], { type: "text/plain" });
+
+  // Create a URL for the Blob object
+  var url = URL.createObjectURL(blob);
+
+  // Create a link element and set its attributes
+  var link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", `${fileList[number]}`);
+
+  // Simulate a click on the link element to download the file
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Release the URL object
+  URL.revokeObjectURL(url);
+}
 let popup = document.getElementById("myPopup");
 let setUp = document.getElementById("setFile");
 let fadeUp= document.getElementById('fade')
