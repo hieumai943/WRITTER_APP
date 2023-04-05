@@ -21,7 +21,7 @@ document.querySelector(".submit").addEventListener("click", () => {
   } else {
     
    fadeUp.style.display='block';
-   popup.style.display='block';
+   popup.style.display='block'; 
     tasklist.push(data);
     localStorage.setItem('storageKey',JSON.stringify(tasklist) );
     editor.setData("");
