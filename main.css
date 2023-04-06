@@ -183,8 +183,7 @@
     position: fixed;
     transform: translate(-50%, -50%);
     width: 70%;
-    box-shadow: 5px 10px 12px #14213d;
-    
+    box-shadow: 5px 12px 12px #14213d7a;
   }
   body{
     background-color: #84a98c;
@@ -194,6 +193,9 @@
     
      /* box-shadow:5px 10px 12px #14213d; */
      background-color: #e5e5e5;
+     border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+     overflow: hidden;
   }
   #cke_1_top{
    
@@ -207,6 +209,8 @@
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     
   }
   #addFile{
