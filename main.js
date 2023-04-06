@@ -11,10 +11,7 @@ let para;
 let tasklist=[];
 let fileList =[];
 let number = localStorage.getItem('currentFile');
-
-document.querySelector(".submit").addEventListener("click", () => {
-  
-
+function saveFile(){
   data = CKEDITOR.instances.content.getData();
   if (data.length == 0) {
     alert("Không thể tạo file do chưa có dữ liệu");
@@ -35,6 +32,9 @@ document.querySelector(".submit").addEventListener("click", () => {
     fadeUp.style.display='block';
     changedpopup.style.display='block';
   }
+}
+document.querySelector(".submit").addEventListener("click", () => {
+  saveFile();
 
 });
 document.querySelector(".open").addEventListener("click", () => {
@@ -129,3 +129,18 @@ else document.querySelector('.fileName').innerHTML=`<h2 '>${fileList[number]}</h
 // showList();
 // editor.setData('');
 // }
+
+window.addEventListener(
+  "hashchange",
+  () => {
+      if(location.hash== '#down'){
+        downloadPlainText();
+      }
+      else if(location.hash== '#save'){
+       saveFile();
+      }
+      else{
+        window.location.href="menu.html"
+      }
+  }
+);

@@ -46,4 +46,13 @@ function deleteFile(num) {
 }
 document.getElementById('addFile').addEventListener('click',()=>{
     localStorage.setItem('currentFile', 99);
+   
 })
+window.location.hash = '#hieu';
+window.addEventListener(
+    "hashchange",
+    () => {
+        if(location.hash== '#new')
+      window.location.href="index.html"
+    }
+  );
