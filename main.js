@@ -18,7 +18,7 @@ document.querySelector(".submit").addEventListener("click", () => {
   data = CKEDITOR.instances.content.getData();
   if (data.length == 0) {
     alert("Không thể tạo file do chưa có dữ liệu");
-  } else {
+  } else if(fileList[number] == null){
     
    fadeUp.style.display='block';
    popup.style.display='block'; 
@@ -27,6 +27,13 @@ document.querySelector(".submit").addEventListener("click", () => {
     editor.setData("");
     //   dang can nhac doan nay khong biet co nen remove item hay khong
   
+  }
+  else {
+    tasklist[number]= data;
+    localStorage.setItem('storageKey',JSON.stringify(tasklist) );
+    editor.setData("");
+    fadeUp.style.display='block';
+    changedpopup.style.display='block';
   }
 
 });
@@ -69,6 +76,7 @@ function downloadPlainText() {
   URL.revokeObjectURL(url);
 }
 let popup = document.getElementById("myPopup");
+let changedpopup= document.getElementById('changedPopup');
 let setUp = document.getElementById("setFile");
 let fadeUp= document.getElementById('fade')
 let fileUp= document.getElementById("saving");
