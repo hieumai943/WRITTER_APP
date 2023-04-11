@@ -90,8 +90,8 @@
 }
  #down{
   position: absolute;
-  top:20%;
-  right: 20%;
+  top: 14%;
+  right:7%;
   color: #0096c7;
   cursor: pointer;
 }
@@ -260,7 +260,8 @@
   }
 .fileName{
     position: absolute;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     top: 30%;
 }
 #fade{

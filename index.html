@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>WRITTER APP</title>
 </head>
+
 <body>
-   
+
     <div id="inside">
-    <!-- <div class="header">
+        <!-- <div class="header">
         <img id="doc" src="asset/img/google_doc.png" alt="" class="doc" >
         <h2>WRITTER APP</h2>
     </div> -->
-  
-    <div id="addition">
-        <a class="open" href="menu.html" ><i class="fa fa-arrow-left" aria-hidden="true" style="font-size: 25px;"></i></a>
-        <div class="fileName"><h2>New File</h2></div>
-        <i id="down" class="fa fa-download" aria-hidden="true" style="font-size:30px;"></i>
 
-        <button class="submit">SAVE</button>
-    </div>
-    <textarea  class="text" name="content" id="" cols="30" rows="10">
+        <div id="addition">
+            <a class="open" href="menu.html"><i class="fa fa-arrow-left" aria-hidden="true"
+                    style="font-size: 25px;"></i></a>
+            <div class="fileName">
+                <h2>New File</h2>
+            </div>
+
+
+            <button class="submit">SAVE</button>
+        </div>
+        <textarea class="text" name="content" id="" cols="30" rows="10">
     </textarea>
-    <script src="ckeditor/ckeditor.js"></script>
-    
-    <SCript>
-        CKEDITOR.replace("content");
-       
-    </SCript>
-    
-    
-    
-    
+        <script src="ckeditor/ckeditor.js"></script>
+
+        <SCript>
+            CKEDITOR.replace("content");
+
+        </SCript>
+
+
+<div><i id="down" class="fa fa-download" aria-hidden="true" style="font-size:30px;"></i>
 </div>
-<div id="fade"></div>
-<div id="myPopup">
-    <h2>Set name for file</h2>
-    <input class="inputVal" type="text" placeholder="Type your file name ..." style="padding-left: 10px"> 
-    <button id="setFile">Set</button>
-  </div>
-  
-</div>
-<div id="changedPopup">
-    <h2>Successfully changed content</h2>
-    <a href="menu.html"><button id="setFile">Back</button></a>
-    
-  </div>
-  
-</div>
-<div id="hieu" style="margin-top: 2000px;">Hieu day</div>
-<script src="main.js"></script>
+
+    </div>
+    <div id="fade"></div>
+    <div id="myPopup">
+        <h2>Set name for file</h2>
+        <input class="inputVal" type="text" placeholder="Type your file name ..." style="padding-left: 10px">
+        <button id="setFile">Set</button>
+    </div>
+
+    </div>
+    <div id="changedPopup">
+        <h2>Successfully changed content</h2>
+        <a href="menu.html"><button id="setFile">Back</button></a>
+
+    </div>
+
+    </div>
+    <div id="hieu" style="margin-top: 2000px;">Hieu day</div>
+    <script src="main.js"></script>
 </body>
+
 </html>
