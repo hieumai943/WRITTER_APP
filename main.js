@@ -107,15 +107,18 @@ function showList() {
     tasklist=[];
   fileList=[];
 }
-  else{ tasklist= localItems;
+// tasklist la noi dung
+  else{ tasklist= localItems; 
     fileList=fileItems;
   }
-  editor.setData(tasklist[number]);
+ 
 }
 
 showList();
-if(number ==99 )document.querySelector('.fileName').innerHTML=`<h2>New File<\h2>`;
-else document.querySelector('.fileName').innerHTML=`<h2 '>${fileList[number]}</h2>`
+// if(number ==99 )document.querySelector('.fileName').innerHTML=`<h2>New File<\h2>`;
+// else document.querySelector('.fileName').innerHTML=`<h2 '>${fileList[number]}</h2>`
+
+
 // showList();
 // function completed(num) {
 //   editor.setData(tasklist[num]);
@@ -130,17 +133,22 @@ else document.querySelector('.fileName').innerHTML=`<h2 '>${fileList[number]}</h
 // editor.setData('');
 // }
 
-window.addEventListener(
-  "hashchange",
-  () => {
-      if(location.hash== '#down'){
-        downloadPlainText();
-      }
-      else if(location.hash== '#save'){
-       saveFile();
-      }
-      else{
-        window.location.href="menu.html"
-      }
+// window.addEventListener(
+//   "hashchange",
+//   () => {
+//       if(location.hash== '#down'){
+//         downloadPlainText();
+//       }
+//       else if(location.hash== '#save'){
+//        saveFile();
+//       }
+      
+//   }
+// );
+tasklist.forEach((data, index) => {
+  if(window.location.hash === `#file${index}`){
+    editor.setData(tasklist[index]);
+    document.querySelector('.fileName').innerHTML=`<h2>${fileList[index]}</h2>`;
+    
   }
-);
+})  

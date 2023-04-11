@@ -23,7 +23,7 @@ function showList() {
 
     tasklist.forEach((data, index) => {
         output += `<div class="file">
-        <a href="index.html"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
+        <a href="index.html#file${index}"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
         <span>${fileList[index]}</span>
         <span id='date' >DATE: ${day} / ${month} / ${year}</span>
         <i id="xoa"class="fa fa-trash-o" aria-hidden="true" onclick="deleteFile(${index})" style="font-size:30px;"></i>
@@ -33,6 +33,7 @@ function showList() {
 }
 showList();
 function completed(num) {
+    
     localStorage.setItem('currentFile', num);
 }
 
