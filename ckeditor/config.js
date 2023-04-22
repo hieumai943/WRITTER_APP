@@ -24,7 +24,7 @@ CKEDITOR.editorConfig = function( config ) {
 	];
 
 	config.removeButtons = 'Source,Save,NewPage,Preview,Templates,PasteText,PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Select,Textarea,Button,ImageButton,HiddenField,Subscript,Strike,Superscript,CopyFormatting,RemoveFormat,Outdent,Indent,Blockquote,CreateDiv,BidiLtr,BidiRtl,Language,Unlink,Anchor,Table,HorizontalRule,PageBreak,Iframe,Smiley,BGColor,Maximize,ShowBlocks,About,Cut,Copy,Paste';
-	config.height =400;
+	config.height =450;
 	config.uiColor = 'e5e5e5';
     config.extraPlugins ='codesnippet';
 	

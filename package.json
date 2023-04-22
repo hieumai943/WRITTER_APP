@@ -1,0 +1,22 @@
+{
+  "name": "writterapp_package",
+  "version": "1.0.0",
+  "description": "nodejs",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss --output src/public/css/app.css"
+  },
+  "author": "maihieu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "morgan": "^1.10.0",
+    "node-sass": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
