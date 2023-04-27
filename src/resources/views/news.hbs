@@ -1,3 +1,4 @@
+ <form method="post" action="/news/store">
 <div id="inside">
         <!-- <div class="header">
         <img id="doc" src="asset/img/google_doc.png" alt="" class="doc" >
@@ -5,37 +6,27 @@
     </div> -->
 
         <div id="addition">
-            <a class="open" href="menu.html"><i class="fa fa-arrow-left" aria-hidden="true"
+            <a class="open" href="/"><i class="fa fa-arrow-left" aria-hidden="true"
                     style="font-size: 25px;"></i></a>
             <div class="fileName">
-                <h2>New File</h2>
+                <h2>{{course.inputVal}}</h2>
             </div>
             <div class="down" >
                 <i id="down" class="fa fa-download" aria-hidden="true" style="font-size:30px;"></i>
-                <button class="submit">SAVE</button>
+               <span class="submit">SAVE</span>
             </div>
             
         </div>
-        <textarea id="editor" name="editor"></textarea>
-        <script>
-		// Initialize the CKEditor instance
-		ClassicEditor
-			.create( document.querySelector( '#editor' ) )
-			.catch( error => {
-				console.error( error );
-			} );
-	    </script>
-
-        <SCript>
-            CKEDITOR.replace("content");
-
-        </SCript>
+          
+        <textarea id="editor" name="editor">
+              
+        </textarea>
 
     </div>
     <div id="fade"></div>
     <div id="myPopup">
         <h2>Set name for file</h2>
-        <input class="inputVal" type="text" placeholder="Type your file name ..." style="padding-left: 10px;height: 30px;">
+        <input id="inputVal" type="text"  placeholder="Type your file name ..." name="inputVal" style="padding-left: 10px;height: 30px;">
         <button id="setFile">Set</button>
     </div>
 
@@ -47,3 +38,36 @@
     </div>
 
     </div>
+
+</form>
+<script>
+     let fadeUp= document.getElementById('fade');
+    let popup = document.getElementById("myPopup");
+    document.querySelector(".submit").addEventListener("click", () => {
+         fadeUp.style.display='block';
+   popup.style.display='block'; 
+   	
+        const { mongooseToObject } = require('../../util/mongoose')
+});
+   // Initialize the CKEditor instance
+		ClassicEditor
+			.create( document.querySelector( '#editor' ) )
+            .then( editor => {
+				// Set the initial content
+                let data = '{{course.editor}}';
+               console.log(data);
+            const decodedString = data.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                console.log(typeof decodedString);
+
+                console.log(decodedString);
+               editor.setData( decodedString );
+                
+// Assume you have retrieved the document with _id "644994d3b31c1ea80b59f3d1" from MongoDB using Mongoose
+
+				
+				
+			} )
+			 
+             CKEDITOR.replace("content");
+   
+</script>

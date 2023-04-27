@@ -4,7 +4,11 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = 3333;
 const path = require('path');
+
 const route = require('./routes');
+// connect to  db
+const db = require('./config/db');
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 // no se coi phan localhost:3000/ nhu la public/ dan den ra duoc ket qua anh
@@ -18,9 +22,12 @@ app.engine(
     }),
 );
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
-
+app.set('views', path.join(__dirname, 'resources','views'));
+app.use(express.urlencoded({
+    extended: true
+   }))
+   db.connect();
 route(app);
 app.listen(port,()=>{
-    console.log(`Example app listening on port http://localhost:${port}`);
+    console.log(`App listening on port http://localhost:${port}`);
 })

@@ -9,8 +9,19 @@
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
             <span>New File</span>
         </div>
+       
     </a>
-        <div class="storageFile"></div>
+    
+        <div class="storageFile">
+             {{#each courses}}
+         <div class="file">
+        <a href="/news/{{this.slug}}"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
+        <span>{{this.inputVal}}</span>
+        <span id='date' >DATE: ${day} / ${month} / ${year}</span>
+        <i id="xoa"class="fa fa-trash-o" aria-hidden="true" onclick="deleteFile(${index})" style="font-size:30px;"></i>
+        </div>
+       {{/each}}
+        </div>
     </div>
   
 </div>
