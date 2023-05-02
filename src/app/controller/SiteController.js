@@ -10,13 +10,7 @@ class SiteController {
            
         // res.render('home');
     }
-    show(req, res,next) {
-       Course.findOne({slug: req.params.slug})
-       .then(course => {
-        res.render('news', {course});
-       })
-       .catch(next);
-    }
+    
 }
 
 module.exports = new SiteController();

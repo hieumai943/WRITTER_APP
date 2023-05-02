@@ -5,7 +5,7 @@
     var day = date.getDate();
 
     
-
+document.getElementById('date').innerHTML ='hieu';
 
 function showList() {
 

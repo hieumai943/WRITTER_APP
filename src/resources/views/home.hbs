@@ -4,7 +4,7 @@
             <h3>My files</h3>
             <i class="searchFile fa fa-search" aria-hidden="true"></i>
         </div>
-        <a href="/news" style="color: #000">
+        <a href="/editFile" style="color: #000">
         <div id="addFile">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
             <span>New File</span>
@@ -13,11 +13,11 @@
     </a>
     
         <div class="storageFile">
-             {{#each courses}}
+         {{#each courses}}
          <div class="file">
-        <a href="/news/{{this.slug}}"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
+        <a href="/editFile/{{this.slug}}"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
         <span>{{this.inputVal}}</span>
-        <span id='date' >DATE: ${day} / ${month} / ${year}</span>
+        <span class='date' ></span>
         <i id="xoa"class="fa fa-trash-o" aria-hidden="true" onclick="deleteFile(${index})" style="font-size:30px;"></i>
         </div>
        {{/each}}
@@ -25,7 +25,7 @@
     </div>
   
 </div>
-
-    <script src="menu.js">
-
-    </script>
+<script >
+    
+    document.querySelector('.date').innerHTML='<div>Hieu</div>'
+</script>
