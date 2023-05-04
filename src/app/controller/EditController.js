@@ -23,6 +23,22 @@ class EditController {
        
         
      }
+    //  change edit 
+     edit(req,res,next){
+      Course.findOne({slug:req.params.slug})
+      .then(course => {
+       res.render('update/edit',{course: mongooseToObject(course)})
+      })
+      .catch(next);
+     }
+    //  [PUT] /editFile/edit/id
+     update(req,res,next){
+      Course.updateOne({ _id: req.params.id}, req.body )
+      .then(()=> res.redirect('/'))
+      .catch(next);
+     }
+    //  [delete] /editFile/id
+   
 }
 
 module.exports = new EditController();

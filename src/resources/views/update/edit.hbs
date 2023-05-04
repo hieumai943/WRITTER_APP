@@ -1,0 +1,54 @@
+<form method="post" action="/editFile/edit/{{course._id}}?_method=PUT">
+    <div id="inside">
+        <!-- <div class="header">
+        <img id="doc" src="asset/img/google_doc.png" alt="" class="doc" >
+        <h2>WRITTER APP</h2>
+    </div> -->
+
+        <div id="addition">
+            <a class="open" href="/me/note"><i class="fa fa-arrow-left" aria-hidden="true"
+                    style="font-size: 25px;"></i></a>
+            <div class="fileName">
+                <h2>Edit {{course.inputVal}}</h2>
+            </div>
+            <div class="down">
+
+                <button class="submit">SAVE</button>
+            </div>
+
+        </div>
+
+        <textarea id="editor" name="editor">
+
+        </textarea>
+
+    </div>
+
+
+   
+
+</form>
+<script>
+   
+    // Initialize the CKEditor instance
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            // Set the initial content
+            let data = '{{course.editor}}';
+            console.log(data);
+            const decodedString = data.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            console.log(typeof decodedString);
+
+            console.log(decodedString);
+            editor.setData(decodedString);
+
+            // Assume you have retrieved the document with _id "644994d3b31c1ea80b59f3d1" from MongoDB using Mongoose
+
+
+
+        })
+
+    CKEDITOR.replace("content");
+
+</script>

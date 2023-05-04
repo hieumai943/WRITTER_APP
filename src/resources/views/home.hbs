@@ -1,31 +1,98 @@
 <div id="container">
-    <div id="saving">
-        <div class="title">
-            <h3>My files</h3>
-            <i class="searchFile fa fa-search" aria-hidden="true"></i>
-        </div>
-        <a href="/editFile" style="color: #000">
-        <div id="addFile">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            <span>New File</span>
-        </div>
-       
-    </a>
-    
-        <div class="storageFile">
-         {{#each courses}}
-         <div class="file">
-        <a href="/editFile/{{this.slug}}"  onclick="completed(${index})"><i class="fa fa-folder-open-o" aria-hidden="true" style="font-size:50px;"></i></a>
-        <span>{{this.inputVal}}</span>
-        <span class='date' ></span>
-        <i id="xoa"class="fa fa-trash-o" aria-hidden="true" onclick="deleteFile(${index})" style="font-size:30px;"></i>
-        </div>
-       {{/each}}
-        </div>
+  <div id="saving">
+    <div class="title">
+      <h3>My files</h3>
+      <i class="searchFile fa fa-search" aria-hidden="true"></i>
     </div>
-  
+    <a href="/editFile" style="color: #000">
+      <div id="addFile">
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <span>New File</span>
+      </div>
+
+    </a>
+
+    <div class="storageFile">
+      {{#each courses}}
+        <div class="file">
+          <a href="/editFile/{{this.slug}}" onclick="completed(${index})"><i
+              class="fa fa-folder-open-o"
+              aria-hidden="true"
+              style="font-size:50px;"
+            ></i></a>
+          <span>{{this.inputVal}}</span>
+          <span class="date"></span>
+          <i id="xoa"
+            class="fa fa-trash-o"
+            aria-hidden="true"
+           
+            style="font-size:30px;"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteFile"
+            data-bs-id ="{{this._id}}" ></i>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
 </div>
-<script >
-    
-    document.querySelector('.date').innerHTML='<div>Hieu</div>'
+
+{{! DELETE FILE }}
+<div id="deleteFile" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">DELETE {{this.inputVal}}</h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to delete this file?</p>
+      </div>
+      <div class="modal-footer">
+
+        <button id="btn-delete-file" type="button" class="btn btn-danger">Delete File</button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{! END DELETE FILE }}
+
+
+{{!-- declare a hidden form order to give form to db with id  --}}
+<form name="delete-file-form" method="POST"></form>
+
+
+<script>
+    const deleteFileModal = document.getElementById('deleteFile')
+   let deleteFile = document.forms["delete-file-form"]
+   let id ;
+    if (deleteFileModal) {
+    deleteFileModal.addEventListener('show.bs.modal', event => {
+     
+        const button = event.relatedTarget
+
+         id = button.getAttribute('data-bs-id');
+       console.log(id);
+     
+  })
+}
+  let btnDeleteFile = document.getElementById('btn-delete-file');
+    btnDeleteFile.onclick = function(){
+
+        deleteFile.action='/'+ id+'?_method=DELETE';
+      deleteFile.submit();
+    }
 </script>

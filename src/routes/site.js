@@ -5,5 +5,6 @@ const siteController = require('../app/controller/SiteController');
 
 
 router.get('/', siteController.index);
+router.delete('/:id',siteController.delete) ;
 
 module.exports = router;

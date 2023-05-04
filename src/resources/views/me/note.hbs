@@ -1,0 +1,29 @@
+<div class="mt-4">
+    <h3>Các note của tôi</h3>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Tên File</th>
+      <th scope="col">Nội dung</th>
+      <th scope="col">Ngày tạo</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each courses}}
+    <tr>
+      <th scope="row">{{ sum @index 1}}</th>
+      
+      <td>{{this.inputVal}}</td>
+      <td class="content">{{this.editor}}</td>
+      <td>{{this.createdAt}}</td>
+      <td>
+        <a href="/editFile/edit/{{this.slug}}" class="btn">Edit</a>
+         <a href="" class="btn">Delete</button>
+      </td>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
+</div>
