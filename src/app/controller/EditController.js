@@ -19,10 +19,7 @@ class EditController {
         courses.save()
         .then(()=> res.redirect('/')
         ) // đưa về trang đầu tiên
-        .catch(error =>{
-
-        });
-    
+        .catch(next);
    
      }
     //  change edit 

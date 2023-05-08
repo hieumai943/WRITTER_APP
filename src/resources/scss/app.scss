@@ -5,8 +5,8 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-#container{
-    height: 100vh;
+#container{ 
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,6 +180,9 @@
     
   }
   #saving{
+ 
+    top: 5%;
+    bottom: 5%;
     position: relative;
     background-color: #edf2f4;
     color: #000;
