@@ -1,4 +1,4 @@
- <form method="post" action="/editFile/store">
+
 <div id="inside">
         <!-- <div class="header">
         <img id="doc" src="asset/img/google_doc.png" alt="" class="doc" >
@@ -13,7 +13,8 @@
             </div>
             <div class="down" >
                 <i id="down" class="fa fa-download" aria-hidden="true" style="font-size:30px;"></i>
-               <span class="submit">SAVE</span>
+               <button class="submit">SAVE</button>
+               {{!-- boi vi  --}}
             </div>
             
         </div>
@@ -24,6 +25,7 @@
 
     </div>
     <div id="fade"></div>
+<form method="post" action="/editFile/store">
     <div id="myPopup">
         <h2>Set name for file</h2>
         <input id="inputVal" type="text"  placeholder="Type your file name ..." name="inputVal" style="padding-left: 10px;height: 30px;">

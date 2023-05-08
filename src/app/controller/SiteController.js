@@ -16,6 +16,9 @@ class SiteController {
         .catch(next);
         
     } 
+    logout(req,res,next){
+        res.render('logout')
+    }
 }
 
 module.exports = new SiteController();

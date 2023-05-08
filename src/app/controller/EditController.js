@@ -15,13 +15,15 @@ class EditController {
     // dung để lưu content vào trong database
     store(req,res,next){
         const courses = new Course(req.body);
+        
         courses.save()
-        .then(()=> res.redirect('/')) // đưa về trang đầu tiên
+        .then(()=> res.redirect('/')
+        ) // đưa về trang đầu tiên
         .catch(error =>{
 
         });
-       
-        
+    
+   
      }
     //  change edit 
      edit(req,res,next){

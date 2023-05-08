@@ -227,11 +227,13 @@
   #inside{
     background-color: #fff;
     border-radius: 10px;
-    top: 50%;
+    position: absolute;
+    top:53%;
     left: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+
     width: 70%;
+   
     box-shadow: 5px 12px 12px #14213d7a;
   }
   body{
@@ -266,12 +268,15 @@
   #addFile{
     display: inline-block;
     background-color: #40916c;
-    width: 25%;
+
     border: 2px solid #000;
     border-radius: 8px;
     padding: 7px 0px 7px 7px;
     cursor: pointer;
     margin-top: 20px;
+  }
+  #addFile span{
+    padding-right: 10px;
   }
   #addFile i{
     font-size: 20px;
@@ -319,7 +324,7 @@
 }
 
 .navbar{
-  background-color: #023e8a;
+  background-color: #14213d;
 
   margin-bottom: 20px;
 }
@@ -327,7 +332,29 @@
   color: #fff;
 }
 .dropdown-menu{
-  background-color:#023e8a ;
+  background-color:#14213d ;
+}
+.logout{
+  color: white ;
+  padding: 4px 24px;
+  cursor: pointer;
+}
+#login{
+  display:none;
+}
+
+.my-button {
+  display: none;
+  padding: 5px 20px;
+  background: #495057;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.my-button:hover{
+  
+    text-decoration: none;
+   
 }
 .navbar-collapse{
   margin-right: 5%;
