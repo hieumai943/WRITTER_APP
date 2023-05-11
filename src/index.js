@@ -14,7 +14,7 @@ const db = require("./config/db");
 app.use(express.static(path.join(__dirname, "public")));
 // no se coi phan localhost:3000/ nhu la public/ dan den ra duoc ket qua anh
 // app.use(morgan('combined'))
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 // dung methodoverride de giup cho minh co the dung method : put
 app.use(methodOverride("_method"));
@@ -29,7 +29,7 @@ app.engine(
 );
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources", "views"));
-app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(
   express.urlencoded({
     extended: true,
