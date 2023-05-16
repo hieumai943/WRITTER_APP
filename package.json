@@ -8,7 +8,7 @@
   },
 
   "scripts": {
-    "start": "nodemon --inspect src/index.js",
+    "start": "node --inspect ./index.js",
     "watch": "node-sass --watch src/resources/scss/app.scss --output src/public/css/app.css"
   },
   "author": "maihieu",

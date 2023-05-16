@@ -7,9 +7,9 @@ const app = express();
 const port = 3333;
 const path = require("path");
 
-const route = require("./routes");
+const route = require("./src/routes");
 // connect to  db
-const db = require("./config/db");
+const db = require("./src/config/db");
 
 app.use(express.static(path.join(__dirname, "public")));
 // no se coi phan localhost:3000/ nhu la public/ dan den ra duoc ket qua anh
@@ -28,7 +28,8 @@ app.engine(
   })
 );
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources", "views"));
+app.set('views', path.join(__dirname, './src/resources/views'));
+
 
 app.use(
   express.urlencoded({
