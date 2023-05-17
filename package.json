@@ -8,8 +8,8 @@
   },
 
   "scripts": {
-    "start": "node --inspect ./index.js",
-    "watch": "node-sass --watch src/resources/scss/app.scss --output src/public/css/app.css"
+    "start": "node --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss --output public/css"
   },
   "author": "maihieu",
   "license": "ISC",
